@@ -41,14 +41,14 @@ class PrefillRunner : public AbstractMatMulNBitsRunner {
   PrefillRunner(WGPUContext* wgpu_context);
   ~PrefillRunner() override;
 
-  bool initialize(uint32_t m, uint32_t k, uint32_t n) override;
+  bool initialize(uint32_t m, uint32_t k, uint32_t n, bool is_verbose) override;
 
   void compute(uint32_t loop) override;
 
   void verify() override;
 
  private:
-  bool configure();
+  bool configure(bool is_verbose);
 
   void create_buffers();
 

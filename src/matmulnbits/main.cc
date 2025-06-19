@@ -47,6 +47,8 @@ struct Config {
   uint32_t N;
 
   uint32_t loop;
+
+  bool is_verbose;
 };
 
 void ParseCommandLine(int argc, char** argv, Config& config) {
@@ -66,6 +68,10 @@ void ParseCommandLine(int argc, char** argv, Config& config) {
     options.add_option("", {"l, loop", "Specify loop",
                             cxxopts::value<uint32_t>()->default_value("100")});
 
+    options.add_option("", {"v, verbose", "Verbose log for print shader code",
+                            cxxopts::value<bool>()->implicit_value("true")
+                            ->default_value("false")});
+
     auto result = options.parse(argc, argv);
 
     if (result.count("help")) {
@@ -78,6 +84,8 @@ void ParseCommandLine(int argc, char** argv, Config& config) {
     config.N = result["n"].as<uint32_t>();
 
     config.loop = result["loop"].as<uint32_t>();
+
+    config.is_verbose = result["verbose"].as<bool>();
   } catch (const cxxopts::exceptions::exception& e) {
     std::cout << "error parsing options: " << e.what() << std::endl;
     exit(-1);
@@ -111,7 +119,7 @@ int main(int argc, char** argv) {
     runner = std::make_unique<DecodeRunner>(wgpu_context.get());
   }
 
-  bool initialzed = runner->initialize(config.M, config.K, config.N);
+  bool initialzed = runner->initialize(config.M, config.K, config.N, config.is_verbose);
   if (!initialzed) {
     return -1;
   }

@@ -43,7 +43,8 @@ class AbstractMatMulNBitsRunner {
 
   virtual bool initialize(uint32_t m,
                           uint32_t k,
-                          uint32_t n) = 0;
+                          uint32_t n,
+                          bool is_verbose) = 0;
 
   virtual void compute(uint32_t loop) = 0;
 

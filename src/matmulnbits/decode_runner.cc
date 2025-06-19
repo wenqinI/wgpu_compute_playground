@@ -44,7 +44,7 @@ DecodeRunner::DecodeRunner(WGPUContext* wgpu_context)
 
 DecodeRunner::~DecodeRunner() {}
 
-bool DecodeRunner::initialize(uint32_t m, uint32_t k, uint32_t n) {
+bool DecodeRunner::initialize(uint32_t m, uint32_t k, uint32_t n, bool is_verbose) {
   M_ = m;
   K_ = k;
   N_ = n;
@@ -56,22 +56,24 @@ bool DecodeRunner::initialize(uint32_t m, uint32_t k, uint32_t n) {
   compute_runner_ = std::make_shared<BaseComputeRunner>(wgpu_context_);
   compute_runner_->initialize();
 
-  if (!configure()) {
+  if (!configure(is_verbose)) {
     return false;
   }
 
   return true;
 }
 
-bool DecodeRunner::configure() {
+bool DecodeRunner::configure(bool is_verbose) {
   std::string source = generate_shader();
   if (source.empty()) {
     return false;
   }
 
   compute_runner_->set_shader(source, "main");
-  std::cout << "======\n";
-  std::cout << source << std::endl;
+  if(is_verbose) {
+    std::cout << "======\n";
+    std::cout << source << std::endl;
+  }
 
   // After `generate_shader()` decides `tile_m_` and `tile_n_`.
   create_buffers();
