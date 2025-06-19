@@ -1,0 +1,51 @@
+======
+M: 128
+K: 3072
+N: 8192
+loop: 100
+======
+Enable toggles 
+  allow_unsafe_apis
+======
+Disable toggles 
+  timestamp_quantization
+======
+Vendor       : intel
+Architecture : xe-lpg
+Device       : Intel(R) Graphics
+Description  : D3D12 driver version 32.0.101.6651
+BackendType  : D3D12
+AdapterType  : integrated GPU
+======
+Features
+  FeatureName::TimestampQuery
+  FeatureName::ShaderF16
+  FeatureName::Subgroups
+  FeatureName::CoreFeaturesAndLimits
+  FeatureName::SubgroupsF16
+PrefillRunner
+======
+Workgroup Size: 256x1x1
+Dispatch Size: 256x1x1
+======
+GPU Compute
+Progress: 0 %Progress: 1 %Progress: 2 %Progress: 3 %Progress: 4 %Progress: 5 %Progress: 6 %Progress: 7 %Progress: 8 %Progress: 9 %Progress: 10%Progress: 11%Progress: 12%Progress: 13%Progress: 14%Progress: 15%Progress: 16%Progress: 17%Progress: 18%Progress: 19%Progress: 20%Progress: 21%Progress: 22%Progress: 23%Progress: 24%Progress: 25%Progress: 26%Progress: 27%Progress: 28%Progress: 29%Progress: 30%Progress: 31%Progress: 32%Progress: 33%Progress: 34%Progress: 35%Progress: 36%Progress: 37%Progress: 38%Progress: 39%Progress: 40%Progress: 41%Progress: 42%Progress: 43%Progress: 44%Progress: 45%Progress: 46%Progress: 47%Progress: 48%Progress: 49%Progress: 50%Progress: 51%Progress: 52%Progress: 53%Progress: 54%Progress: 55%Progress: 56%Progress: 57%Progress: 58%Progress: 59%Progress: 60%Progress: 61%Progress: 62%Progress: 63%Progress: 64%Progress: 65%Progress: 66%Progress: 67%Progress: 68%Progress: 69%Progress: 70%Progress: 71%Progress: 72%Progress: 73%Progress: 74%Progress: 75%Progress: 76%Progress: 77%Progress: 78%Progress: 79%Progress: 80%Progress: 81%Progress: 82%Progress: 83%Progress: 84%Progress: 85%Progress: 86%Progress: 87%Progress: 88%Progress: 89%Progress: 90%Progress: 91%Progress: 92%Progress: 93%Progress: 94%Progress: 95%Progress: 96%Progress: 97%Progress: 98%Progress: 99%
+======
+output:
+[100000]: 12.250 -1.433 12.125 13.984 -2.479 14.039 -23.531 18.547 -14.477 2.455 -15.492 25.453 11.953 -17.047 7.695 -4.348 
+[000016]: 35.062 -10.406 28.094 4.000 20.031 -36.000 -6.625 -6.027 -18.375 16.156 7.418 19.578 9.500 -3.834 -1.878 -20.922 
+[000032]: 12.648 43.969 -3.281 13.797 22.531 -22.938 23.688 -25.594 2.277 7.250 -16.781 15.875 7.762 -43.188 -15.773 17.516 
+[000048]: 9.039 2.879 16.906 18.156 2.752 29.562 3.566 3.574 -7.336 5.762 -19.891 30.266 -5.273 15.602 -10.109 10.984 
+[000064]: 11.414 -0.164 4.656 1.785 19.156 -9.289 0.833 -8.422 -16.391 12.977 2.527 9.594 -33.750 11.844 -2.188 -5.410 
+[000080]: -1.907 17.594 -1.480 1.573 7.004 45.875 0.858 4.910 8.172 29.828 -16.156 -5.117 5.633 -22.031 -21.078 -60.531 
+[000096]: 5.961 4.242 -11.812 -5.195 15.688 -25.297 -22.906 -30.141 -15.297 2.053 5.336 -12.789 12.680 -2.424 29.375 -10.586 
+[000112]: 14.859 26.172 11.602 -23.250 -24.531 -7.406 12.773 -24.672 -23.578 2.855 10.281 -3.641 17.781 -5.547 -20.250 14.266 
+Elements (Float16) 1048576, Abs Accumulate 12521023.629
+======
+Total samples: 100
+Min Latency: 1937.696 us
+P10 Latency: 1945.248 us
+P30 Latency: 1952.852 us
+P50 Latency: 1966.498 us
+Max Latency: 3370.083 us
+Average Latency: 2030.854 us
