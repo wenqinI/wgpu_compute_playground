@@ -16,7 +16,7 @@ Basic: ADL(12th) CPU device.
 Recommend: LNL(15th) CPU device.
 
 **Software:**
-CMake 3.16 or higher, Python3.x, Visual Studio.
+Win10/Win11, CMake 3.16 or higher, Python3.x, Visual Studio.
 
 ## Getting Started
 
@@ -38,13 +38,13 @@ CMake 3.16 or higher, Python3.x, Visual Studio.
 
     ```shell
     cmake -S . -B build
-    cmake --build build -j8
+    cmake --build build --config Release -j8
     ```
 
 4. **Run Tests:**
 
     ```shell
-    build\wgpu\Debug\matmulnbits.exe > result.txt
+    build\wgpu\Release\matmulnbits.exe > result.txt
     python3 diff.py result-ref.txt result.txt output Elements
     ```
 
@@ -52,7 +52,7 @@ CMake 3.16 or higher, Python3.x, Visual Studio.
 
     ```shell
     for %%x in (128 1024 2048 4096) do (
-        build\wgpu\Debug\matmulnbits.exe -m %%x
+        build\wgpu\Release\matmulnbits.exe -m %%x
     )
 
     ```
