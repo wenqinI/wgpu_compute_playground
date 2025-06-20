@@ -4,8 +4,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/wgpu")
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/common)
 
-add_subdirectory(wgpu_info)
-add_subdirectory(basic_compute)
 add_subdirectory(matmulnbits)
 
 # Create a custom target to copy files
