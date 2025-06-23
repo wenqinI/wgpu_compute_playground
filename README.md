@@ -23,9 +23,7 @@ Win10/Win11, CMake 3.16 or higher, Python3.x, Visual Studio.
 1. **Clone the Repository:**
 
     ```shell
-    git clone https://github.com/daijh/wgpu_compute_playground.git
-    cd wgpu_compute_playground
-    git checkout -b matmulnbits-dev remotes/origin/matmulnbits-dev
+    git clone -b matmulnbits-dev https://github.com/wenqinI/wgpu_compute_playground.git
     ```
 
 2. **Initialize/Update Submodules:**
@@ -51,7 +49,7 @@ Win10/Win11, CMake 3.16 or higher, Python3.x, Visual Studio.
 5. **Run Benchmarking:**
 
     ```shell
-    for %%x in (128 1024 2048 4096) do (
+    for %%x in (1 128 1024 2048 4096) do (
         build\wgpu\Release\matmulnbits.exe -m %%x
     )
 
